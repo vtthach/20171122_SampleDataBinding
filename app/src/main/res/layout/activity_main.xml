@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <import type="android.view.View" />
-
         <variable
             name="viewModel"
             type="databinding.sample.com.sf0404.a20171122_sampledatabinding.MainViewModel" />
@@ -41,10 +39,10 @@
             android:id="@+id/tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tv3"
+            android:text="@{String.valueOf(viewModel.counter)}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="   @id/tv2" />
+            app:layout_constraintTop_toBottomOf="@id/tv2" />
 
         <Button
             android:id="@+id/refresh_button"

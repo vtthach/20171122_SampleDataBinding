@@ -5,11 +5,13 @@ import android.databinding.ObservableField
 
 class MainViewModel : ViewModel() {
     var repoModel: RepoModel = RepoModel()
+    var counter = ObservableField(0)
     val text = ObservableField("Old data")
     val isLoading = ObservableField(false)
 
     private val onDataReadyCallback = object : OnDataReadyCallback {
         override fun onDataReady(data: String) {
+            counter.set(counter.get() + 1)
             isLoading.set(false)
             text.set(data)
         }

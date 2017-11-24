@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        binding . executePendingBindings ()
+        binding.viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java) // Must class.java if using kotlin
+        binding.executePendingBindings()
     }
 }
